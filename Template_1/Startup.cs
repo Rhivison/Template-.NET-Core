@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Template_1.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Template_1
 {
@@ -21,6 +23,9 @@ namespace Template_1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<Template_1Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Template_1DB")).EnableSensitiveDataLogging());
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
