@@ -37,6 +37,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Template_1.Application\Template_1.Application.csproj" />
     <ProjectReference Include="..\Template_1.Data\Template_1.Data.csproj" />
+    <ProjectReference Include="..\Template_1Ioc\Template_1Ioc.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
